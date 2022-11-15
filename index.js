@@ -5,8 +5,9 @@ const locationController = require('./locations/locations.controller')
 const Console = require("console");
 const app = express()
 const port = 3000
+const bodyParser = require('body-parser')
 
-
+app.use(bodyParser.json())
 app.use(locationController)
 
 app.get('/', (req, res) => {
