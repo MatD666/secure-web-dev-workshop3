@@ -12,8 +12,7 @@ function findOne ( id){
 
 function Add(content) {
 	const Local = new Location(content)
-	Local.save()
-	return Local
+	return Local.save()
 }
 
 async function Del(item) {

@@ -2,12 +2,14 @@ const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const locationController = require('./locations/locations.controller')
-const Console = require("console");
+const userController = require('./Users/users.controller')
+const Console = require('console');
 const app = express()
 const port = 3000
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
+app.use(userController)
 app.use(locationController)
 
 app.get('/', (req, res) => {
