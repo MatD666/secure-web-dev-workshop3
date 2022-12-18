@@ -3,7 +3,7 @@
 const Location = require('./locations.model')
 
 function findAll () {
-	return Location.find({}).limit(10).lean()
+	return Location.find({})
 }
 
 function findOne ( id){
@@ -22,8 +22,7 @@ async function Del(item) {
 }
 
 async function Update(id, content) {
-	const result = await Location.updateOne({_id: id}, content)
-	return result
+	return await Location.updateOne({_id: id}, content)
 }
 
 module.exports.findAll = findAll

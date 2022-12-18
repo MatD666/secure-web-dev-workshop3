@@ -19,7 +19,7 @@ router.post('/locations', async (req, res) => {
 })
 
 router.delete('/locations/:id', async (req, res) => {
-	return res.status(200).send({locations: locationsService.Del(req.params.id)})
+	return res.status(200).send(locationsService.Del(req.params.id))
 })
 
 router.patch('/locations/:id', async (req, res) => {
